@@ -5,7 +5,7 @@ from fastapi import FastAPI,Form,HTTPException,status,Request
 from pydantic import BaseModel,Field, field_validator, EmailStr, ValidationError
 from main import app, connection, cursor
 
-templates = Jinja2Templates(directory="Projects/BankSystem")
+templates = Jinja2Templates(directory=".")
 
 class SignUp(BaseModel):
     name : str
