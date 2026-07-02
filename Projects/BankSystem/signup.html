@@ -18,7 +18,7 @@
         {% if error %}
             <p class="error">{{ error }}</p>
         {% endif %}
-        <form action="http://127.0.0.1:8000/signup" method="POST">
+        <form action="/signup" method="POST">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="number" name="age" placeholder="Age" required>
             <input type="text" name="address" placeholder="Address" required>
