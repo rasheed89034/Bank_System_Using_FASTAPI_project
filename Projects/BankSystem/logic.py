@@ -4,6 +4,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi import FastAPI,Form,HTTPException,status,Request
 from pydantic import BaseModel,Field, field_validator, EmailStr, ValidationError
 from main import app, connection, cursor
+from fastapi.responses import RedirectResponse
 
 templates = Jinja2Templates(directory=".")
 
@@ -40,6 +41,10 @@ class Deposit(BaseModel):
 class Withdrawal(BaseModel):
     user_id : int
     amount : float
+
+@app.get("/")
+def home():
+    return RedirectResponse(url="/login")
 
 @app.get("/signup")
 def signup_page(request: Request):
