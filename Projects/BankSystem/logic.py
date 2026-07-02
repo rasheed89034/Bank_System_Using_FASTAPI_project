@@ -1,10 +1,11 @@
 import re 
 import sqlite3
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi import FastAPI,Form,HTTPException,status,Request
 from pydantic import BaseModel,Field, field_validator, EmailStr, ValidationError
 from main import app, connection, cursor
-from fastapi.responses import RedirectResponse
+
 
 templates = Jinja2Templates(directory=".")
 
